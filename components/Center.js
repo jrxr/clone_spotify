@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@heroicons/react/outline'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { shuffle } from 'lodash'
 import { useRecoilState, useRecoilValue } from 'recoil'
@@ -24,8 +24,6 @@ export default function Center() {
   const playlistId = useRecoilValue(playlistIdState)
   const [playlist, setPlaylist] = useRecoilState(playlistState)
 
-  
-
   useEffect(() => {
     setColor(shuffle(colors).pop())
   }, [playlistId])
@@ -40,7 +38,7 @@ export default function Center() {
   }, [spotifyApi, playlistId])
 
   return (
-    <div className="flex-grow">
+    <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8">
         <div
           className="
@@ -55,6 +53,7 @@ export default function Center() {
           text-white
           opacity-90
           hover:opacity-80"
+          onClick={signOut}
         >
           <img
             className="h-10 w-10 rounded-full"
