@@ -34,9 +34,14 @@ export default function Sidebar() {
       border-r 
       border-gray-900 
       p-5
-      text-sm
+      text-xs
       text-gray-500
-      scrollbar-hide"
+      scrollbar-hide
+      lg:text-sm
+      sm:max-w-[12rem]
+      lg:max-w-[15rem]
+      hidden
+      md:inline-flex"
     >
       <div className="space-y-4">
         <button
