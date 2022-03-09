@@ -13,6 +13,7 @@ export default function Player() {
 
   return (
     <div>
+      
       <div>
         <img src="" alt="" />
       </div>
