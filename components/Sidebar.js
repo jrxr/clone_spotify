@@ -41,7 +41,8 @@ export default function Sidebar() {
       sm:max-w-[12rem]
       lg:max-w-[15rem]
       hidden
-      md:inline-flex"
+      md:inline-flex
+      pb-36"
     >
       <div className="space-y-4">
         <button className="flex items-center space-x-2 hover:text-white">

@@ -1,12 +1,13 @@
-import { useRecoilState } from 'recoil';
-import { currentTrackIdState } from '../atoms/songAtom';
-import useSpotify from './useSpotify';
-import { useState, useEffect } from 'react';
+import { useRecoilState } from 'recoil'
+import { currentTrackIdState } from '../atoms/songAtom'
+import useSpotify from './useSpotify'
+import { useState, useEffect } from 'react'
 
-function useSongInfo() {
-  const spotifyApi = useSpotify();
-  const [currentIdTrack, setCurrentIdTrack] = useRecoilState(currentTrackIdState);
-  const [songInfo, setSongInfo] = useState(null);
+export default function useSongInfo() {
+  const spotifyApi = useSpotify()
+  const [currentIdTrack, setCurrentIdTrack] =
+    useRecoilState(currentTrackIdState)
+  const [songInfo, setSongInfo] = useState(null)
 
   useEffect(() => {
     const fetchSongInfo = async () => {
@@ -18,14 +19,15 @@ function useSongInfo() {
               Authorization: `Bearer ${spotifyApi.getAccessToken()}`,
             }
           }
-        )
+        ).then(res => res.json())
+
+        setSongInfo(trackInfo)
       }
     }
+    fetchSongInfo();
+  }, [currentIdTrack, spotifyApi])
 
-    fetchSongInfo()
-  }, [currentIdTrack, spotifyApi]);
+  
 
-  return songInfo;
+  return songInfo
 }
-
-export default useSongInfo;
