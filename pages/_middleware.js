@@ -11,6 +11,6 @@ export async function middleware(req) {
   }
 
   if (!token && pathname !== '/login') {
-    return NextResponse.redirect('/login');
+    return NextResponse.redirect('http://clone-spotify-jrxr.vercel.app//login');
   }
 }
