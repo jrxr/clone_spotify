@@ -44,7 +44,7 @@ export default function Player() {
         spotifyApi.pause().catch((err) => {})
         setIsPlaying(false)
       } else {
-        spotifyApi.play().catch((err) => {})
+        spotifyApi.play()
         setIsPlaying(true)
       }
     }).catch((err) => {})
@@ -77,11 +77,11 @@ export default function Player() {
         grid-cols-3 
         bg-gradient-to-b
         from-black
-        to-gray-900 px-2
+        to-emerald-900 px-2
         text-xs text-white md:px-8 md:text-base"
     >
       {/* Left */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2">
         <img
           className="hidden h-10 w-10 md:inline"
           src={songInfo?.album.images?.[0]?.url}
@@ -111,7 +111,7 @@ export default function Player() {
         className="flex 
         items-center 
         justify-end 
-        space-x-3 
+        space-x-2 
         pr-5
         md:space-x-4"
       >
@@ -120,7 +120,7 @@ export default function Player() {
           className="button"
         />
         <input
-          className="w-14 md:w-28"
+          className="w-9 md:w-28"
           type="range"
           value={volume}
           onChange={(e) => setVolume(Number(e.target.value))}

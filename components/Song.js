@@ -19,7 +19,7 @@ export default function Song({ order, track }) {
   return (
     <div className="
       grid grid-cols-2 
-      text-gray-500 
+      text-green-600 
       py-4 px-5 
       hover:bg-gray-900 
       roundend-lg
@@ -27,17 +27,21 @@ export default function Song({ order, track }) {
       onClick={playSong}
     >
       <div className="flex items-center space-x-4">
-        <p>{order + 1}</p>
         <img 
-          className="h-10 w-10"
+          className="
+          sm:max-w-[15rem]
+          lg:max-w-[20rem]
+          md:inline-flex 
+          w-12 h-12 rounded-full
+          "
           src={track.track.album.images[0].url} 
           alt="track album" 
         />
         <div>
-          <p className="w-36 lg:w-64 text-white truncate">
+          <p className="w-20 md:w-36 lg:w-64 text-white truncate">
             {track.track.name}
           </p>
-          <p className="w-40">
+          <p className="w-20 lg:w-40">
             {track.track.artists[0].name}
           </p>
         </div>

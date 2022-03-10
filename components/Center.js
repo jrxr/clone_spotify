@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/outline'
+import { LogoutIcon } from '@heroicons/react/outline'
 import { useSession, signOut } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import { shuffle } from 'lodash'
@@ -34,7 +34,7 @@ export default function Center() {
       .then((data) => {
         setPlaylist(data.body)
       })
-      .catch((err) => console.log('Something went wrong!', err))
+      .catch((err) => {})
   }, [spotifyApi, playlistId])
 
   return (
@@ -47,7 +47,7 @@ export default function Center() {
           items-center
           space-x-3
           rounded-full 
-          bg-black 
+          bg-emerald-700 
           p-1
           pr-2
           text-white
@@ -61,7 +61,7 @@ export default function Center() {
             alt="Image User"
           />
           <h2>{session?.user.name}</h2>
-          <ChevronDownIcon className="h-5 w-5" />
+          <LogoutIcon className="h-5 w-5" />
         </div>
       </header>
 
@@ -77,7 +77,11 @@ export default function Center() {
         `}
       >
         <img 
-          className="h-44 w-44 rounded-2xl"
+          className="
+            sm:max-w-[11rem]
+            lg:max-w-[13rem]
+            md:inline-flex   
+            hidden rounded-2xl"
           src={playlist?.images?.[0]?.url} 
           alt="Image Playlist" 
         />
