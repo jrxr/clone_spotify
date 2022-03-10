@@ -18,7 +18,7 @@ import {
 
 export default function Player() {
   const spotifyApi = useSpotify()
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
   const [currentTrackId, setCurrentTrackId] =
     useRecoilState(currentTrackIdState)
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState)
@@ -40,14 +40,14 @@ export default function Player() {
 
   const handlePlayPause = () => {
     spotifyApi.getMyCurrentPlaybackState().then((data) => {
-      if (data.body.is_playing) {
-        spotifyApi.pause()
+      if (data.body?.isPlaying) {
+        spotifyApi.pause().catch((err) => {})
         setIsPlaying(false)
       } else {
-        spotifyApi.play()
+        spotifyApi.play().catch((err) => {})
         setIsPlaying(true)
       }
-    })
+    }).catch((err) => {})
   }
 
   useEffect(() => {

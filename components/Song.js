@@ -13,7 +13,7 @@ export default function Song({ order, track }) {
     setIsPlaying(true);
     spotifyApi.play({
       uris: [track.track.uri],
-    });
+    }).catch((err) => {});
   }
 
   return (
