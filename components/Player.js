@@ -40,13 +40,12 @@ export default function Player() {
 
   const handlePlayPause = () => {
     spotifyApi.getMyCurrentPlaybackState().then((data) => {
-      if (data.body?.isPlaying) {
+      if (data.body?.is_playing) {
         spotifyApi.pause().catch((err) => {})
-        setIsPlaying(false)
       } else {
-        spotifyApi.play()
-        setIsPlaying(true)
+        spotifyApi.play().catch((err) => {})
       }
+      setIsPlaying(!data.body?.is_playing);
     }).catch((err) => {})
   }
 

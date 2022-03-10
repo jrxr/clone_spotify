@@ -1,27 +1,54 @@
-# Next.js + Tailwind CSS Example
+<p align="center">
+  <img alt="Letmeask" src=".github/logo.svg" width="160px">
+</p>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<p align="center">
+  <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=8257E5&labelColor=000000" alt="License">
+</p>
 
-## Preview
+<h1 align="center">
+    <img alt="Clone Spotify" src=".github/cover.svg" />
+</h1>
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+<br>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## 🧪 Tecnologias
 
-## Deploy your own
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- [React](https://reactjs.org)
+- [NextJS](https://nextjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Spotify API](https://developer.spotify.com/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## 🚀 Como executar
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+$ git clone https://github.com/jrxr/clone_spotify.git
+$ cd clone_spotify
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Para iniciá-lo, siga os passos abaixo:
+```bash
+# Instalar as dependências
+$ yarn
+# Iniciar o projeto
+$ yarn dev
+```
+O app estará disponível no seu browser pelo endereço http://localhost:3000.
+
+Lembrando que será necessário criar uma conta no [Spotify](https://developer.spotify.com/) para ter acesso as listas de reprodução e controle da reprodução das músicas e para obter as credencias de autenticação. Em seguida, defina no arquivo .env as configurações do seu projeto (remova o example do arquivo .env.example).
+
+## 💻 Projeto
+
+Clone do Spotify foi realizado com intuito das pessoas ter sua lista de reprodução do Spotify e com controle de pausar, iniciar, diminuir e aumentar as músicas com a API do Spotify.
+
+## 📝 License
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
+
+Feito com 💜 by Agacy Júnior 💻
